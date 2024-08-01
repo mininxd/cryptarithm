@@ -10,7 +10,6 @@ app.use('/src', express.static(__dirname + '/src'));
 app.use(express.static('src'));
 
 
-
 app.get('/', async (req, res) => {
     const homepage = fs.readFileSync(`${__dirname}/src/index.html`);
     res.type("text/html").send(homepage);
