@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
 
 app.get('/v1', async (req, res) => {
   const kueri = req.query.q;
-      let info = ({'info': 'pembagian pada query ubah jadi (÷), karena slash (/) pada url adalah direktori'})
+      let err = ({'error':'no solution or no queries','hint': 'pembagian pada query ubah jadi (÷), karena slash (/) pada url adalah direktori'})
       
   if (kueri) {
     try {
@@ -28,10 +28,10 @@ app.get('/v1', async (req, res) => {
       res.json(data);
       
     } catch (e) {
-      res.json(info)
+      res.json(err)
     }
   } else {
-    res.json({'error':'query required', ...info})
+    res.json({err})
   }
 })
 
