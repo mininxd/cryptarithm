@@ -1,0 +1,19 @@
+* {
+  font-family: 'Roboto', Sans-Serif;
+}
+.container {
+  padding: 20px !important;
+}
+.resultNum, .resultWord {
+  display: flex;
+  justify-content: center;
+}
+.resultNum .number, .resultWord .word {
+  background: #222;
+  border-radius: 2px;
+  width: 50px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 1px;
+}
