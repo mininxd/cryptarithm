@@ -16,7 +16,12 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/v1', async (req, res) => {
-  const kueri = req.query.q;
+  let q = req.query.q;
+  function removeDuplicate(str) {
+  return str.replace(/([^\w])\1+/g, '$1').replace(/\s+([^\w])/g, '$1');
+}
+ let kueri = removeDuplicate(q);
+
       let err = ({'error':'no solution or no queries','hint': 'pembagian pada query ubah jadi (÷), karena slash (/) pada url adalah direktori'})
       
   if (kueri) {
@@ -28,6 +33,7 @@ app.get('/v1', async (req, res) => {
       res.json(data);
       
     } catch (e) {
+      res.json(err)
       res.json(err)
     }
   } else {
