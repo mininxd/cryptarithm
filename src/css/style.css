@@ -61,3 +61,6 @@ html {
   font-size: 10px;
   font-family: 'Roboto-Mono', Monospace;
 }
+a, a:visited, a:focus, a:hover {
+  color: blue; text-decoration: underline; font-weight: 500;
+}
