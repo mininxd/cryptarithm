@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
    <head>
-     <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-</style>
+    
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
   <script src="js/script.js" type="module"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -13,23 +11,28 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
-    <title>Cryptarithm</title>
+    <title>Cryptarithm Solver</title>
 </head>
 
 <body>
 <div class="container">
   
   <h1 class="is-3 is-centered has-text-centered title">Cryptarithm Solver</h1>
-<form>
-  <input id="input" class="input is-normal" type="text" placeholder=""/>
-  <button id="run" class="button">Run</button>
+<form class="field is-grouped">
+  <input required id="input" class="input is-normal is-responsive" type="text" placeholder="AA*AA+B=ABC"/>
+  <button type="submit" id="run" class="button is-large is-responsive">Solve</button>
 </form>
 
+<span id="output" class="subtitle">
+</span>
 
 
-
+<div id="exp" class="result-exp is-light">
+  <div id="expWord" class="expWord title is-4"></div>
+  <div id="expNum" class="expNum title is-4"></div>
+</div>
 <section class="hero">
-  <div class="hero-body">
+  <div id="result" class="hero-body">
     <div id="resultWord" class="resultWord">
     </div>
     <div id="resultNum" class="resultNum">
@@ -37,12 +40,26 @@
   </div>
 </section>
 
-
+<div style="display:none" id="resultJson">
+<hr>
+<span id="api"></span>
+<textarea readonly class="subtitle" id="textarea">
+</textarea>
 </div>
 
 
 
+<div style="display:none" id="foot" class="footer">
+  <div class="content has-text-centered">
+    <p>
+Made with ❤
+  <br>
+&copy; mininxd & Val 2024 - Present
+    </p>
+  </div>
+</div>
 
+</div>
 </body>
 
 

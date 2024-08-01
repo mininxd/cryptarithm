@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   font-family: 'Roboto', Sans-Serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 .container {
   padding: 20px !important;
@@ -8,8 +13,11 @@
   display: flex;
   justify-content: center;
 }
+.resultNum .number:nth-child(even), .resultWord .word:nth-child(even) {
+  background: #eee;
+}
 .resultNum .number, .resultWord .word {
-  background: #222;
+  background: #eaeaea;
   border-radius: 2px;
   width: 50px;
   text-align: center;
@@ -18,8 +26,38 @@
   margin: 1px;
 }
 .input {
-  width: 75%;
+  width: 100%;
+  box-shadow: none !important;
 }
 .button {
-  width: 20%;
+  box-shadow: none !important;
+}
+.hero-body {
+  padding-top: 1px;
+}
+#exp {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center;
+}
+.expWord, .expNum {
+  line-height: 6px !important;
+  padding-left: 10px;
+}
+#textarea {
+  width: 100%;
+  height: 65vh;
+  border: none;
+  font-family: 'Roboto-Mono', Monospace;
+}
+.footer {
+  background: #fff;
+  width: 100%;
+}
+#api {
+  font-size: 10px;
+  font-family: 'Roboto-Mono', Monospace;
 }
