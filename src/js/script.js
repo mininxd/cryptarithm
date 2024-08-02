@@ -1,6 +1,7 @@
 function fetchCrypt(event) {
 var q = event;
-var query = q.replaceAll("/",'÷');
+var query = q.replaceAll("/",'÷')
+.replaceAll(" ","");
 fetch(`v1?q=${query}`).then(res => {return res.json()})
  .then(data => {
   if(data.error) {
@@ -42,7 +43,12 @@ run.addEventListener('click', function(e) {
   resultWord.innerHTML = ""
   resultNum.innerHTML = ""
   e.preventDefault();
+  try {
   fetchCrypt(input.value);
+  } catch(e) {
+    console.log(e)
+    textarea.innerHTML = e;
+  }
   run.classList.add('is-loading')
   run.classList.add('is-loading')
   
